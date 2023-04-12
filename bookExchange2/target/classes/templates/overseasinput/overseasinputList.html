@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../css/base.css" />
+		<link rel="stylesheet" href="../css/info-mgt.css" />
+		<link rel="stylesheet" href="../css/WdatePicker.css" />
+		<script type="text/javascript" src="../js/jquery.js"></script>
+		<script type="text/javascript" src="../js/chinasofti.js"></script>
+		<script type="text/javascript">
+			$(function () {
+				$("#all").click(function () {
+					$("input:checkbox[name='uid']").prop("checked", this.checked)
+				})
+			})
+
+			function gotoPage(currentPage) {
+				$("#currentPage").val(currentPage);
+				$("#myForm").submit();
+			}
+			function gotoPage() {
+				$("#searchForm").submit();
+			}
+
+			function deleteOverseasinputs() {
+				var datetime = $("#datetime").val();
+				var pidcheckeds = $("input:checkbox[name='pid']:checked");
+				var pids = "";
+				if (pidcheckeds.length > 0) {
+					for (var i = 0; i < pidcheckeds.length; i++) {
+						pids += pidcheckeds[i].value + ",";
+					}
+					window.location.href = "deleteOverseasinputs?pids=" + pids + "&datetime=" + datetime;
+				} else {
+					alert("请至少选择一个要删除的数据");
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="title">
+			<h2>境外输入确诊数据</h2>
+		</div>
+		<form id="searchForm" action="/getOsin" method="GET">
+			<input type="hidden" name="_csrf" />
+			<div class="query" style="width: 580px;border: none;">
+				<div class="query-conditions ue-clear">
+					<div class="conditions staff ue-clear" style="width: 580px;">
+						<label style="width: 37px;">日期：</label>
+						<input id="datetime" type="date" name="time" placeholder="请输入要查询的日期" />
+
+						<label style="width: 50px;">省份名：</label>
+						<input type="text" name="provinceShortName" placeholder="可以直接输入或选择" />
+
+						<a href="javascript:;" onclick="gotoPage();" style="margin-left: 10px;" class="confirm">查询</a>
+					</div>
+				</div>
+			</div>
+		</form>
+		<!-- 按钮 -->
+		<div style="position:absolute;right:0;margin:-45px 5px 0 0">
+			<a href="addOverseasinput.html" id="add" class="add">
+				<img src="../images/add_btn.png" name="Image1" border="0" id="Image1"
+					onmouseover="MM_swapImage('Image1','','images/add_btn_1.jpg',1)" onmouseout="MM_swapImgRestore()" />
+			</a>
+
+			<a href="#" onclick="deleteOverseasinputs();" id="delete" class="delete">
+				<img src="../images/delete_btn.png" border="0" id="Image4"
+					onmouseover="MM_swapImage('Image4','','../images/delete_btn_1.jpg',1)"
+					onmouseout="MM_swapImgRestore()" />
+			</a>
+
+
+		</div>
+		<div class="table-box">
+			<form action="/overSeaAll" id="myform">
+			<table>
+				<thead>
+					<tr>
+						<input type="hidden" name="page" id="currentPage" th:value="1">
+						<th class="num"><input style="height: auto;" type="checkbox" id="checkAll" /></th>
+						<th class="name">省份编号</th>
+						<th class="process">省份名称</th>
+						<th class="process">境外输入数量</th>
+						<th class="operate">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="o:${ova}" >
+
+						<th class="num"th:value="${o.pid}"><input style="height: auto;" name="pid" type="checkbox"/></th>
+						<!--/*@thymesVar id="provinceShortName" type=""*/-->
+						<td class="num" th:text="${o.pid}"></td>
+						<td class="name" th:text="${o.provinceShortName}"></td>
+						<td class="process" th:text="${o.confirmedCount}"></td>
+						<!--th class="process">累计确诊数量</th-->
+						<td class="operate">
+							<a th:href="@{/overseasinputgetOne(pid=${o.pid},flag=0)}">查看详情</a>
+
+							<a th:href="@{/overseasinputgetOne(pid=${o.pid},flag=1)}">修改</a>
+
+							<a th:onclick="dele([[${o.pid}]])">删除</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+				<div class="pagination ue-clear">
+					<div class="goto"><span class="text">转到第</span><input id="yema" type="text"><span class="page">页</span><a
+							href="javascript:;" onclick="gotoPage(document.getElementById('yema').value);">转</a></div>
+					<div class="pagin-list">
+						<a th:if="${info.pageNum>1}" href="javascript:;" class="prev"
+						   th:onclick="gotoPage([[${info.prePage}]])">
+							上一页
+						</a>
+						<span class="current"></span>
+						<a th:if="${info.pageNum < info.pages}" href="javascript:;" class="next"
+						   th:onclick="gotoPage([[${info.nextPage}]])">
+							下一页
+						</a>
+					</div>
+					<div class="pxofy">显示第<font th:text="${info.pageNum}"></font>页，总共<font th:text="${info.total}">
+					</font>条
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/WdatePicker.js"></script>
+	<script type="text/javascript" src="../js/jquery.pagination.js"></script>
+	<script type="text/javascript">
+		$(".select-title").on("click", function() {
+			$(".select-list").hide();
+			$(this).siblings($(".select-list")).show();
+			return false;
+		})
+		$(".select-list").on("click", "li", function() {
+			var txt = $(this).text();
+			$(this).parent($(".select-list")).siblings($(".select-title")).find("span").text(txt);
+		})
+
+		$("tbody").find("tr:odd").css("backgroundColor", "#eff6fa");
+
+		showRemind('input[type=text], textarea', 'placeholder');
+	</script>
+</html>
