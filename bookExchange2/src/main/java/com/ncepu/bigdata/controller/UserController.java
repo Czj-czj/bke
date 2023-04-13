@@ -47,7 +47,7 @@ public class UserController {
     @GetMapping("/updateUser")
     public boolean upU(@RequestParam("username") String username,@RequestParam("password") String pwd,@RequestParam("email") String email){
         User user=new User(username,pwd,email);
-//        userserviceImpl.
+       userserviceImpl.insert(user);
 
 
         return false;

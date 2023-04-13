@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-@Controller
+@RestController
 @RequestMapping("/book")
 public class BookAction {
     @Autowired
@@ -41,12 +41,12 @@ public class BookAction {
             String publishDate = String.format("%04d-%02d-%02d", 2000 + random.nextInt(21), random.nextInt(12) + 1, random.nextInt(28) + 1);
             String description = DESCRIPTIONS[random.nextInt(DESCRIPTIONS.length)];
             String image = IMAGE_URLS[random.nextInt(IMAGE_URLS.length)];
-            double price = random.nextDouble() * 100.0;
+            double price = (random.nextDouble() * 10000);
+            price=((int)price)/100.0;
             Book book = new Book(bookID, userID, title, author, publisher, publishDate, description, image, price);
             bookList.add(book);
         }
         return bookList;
-        //return bookService.getBookByRG(start,end);
     }
     @PostMapping("/add")
     @ResponseBody
