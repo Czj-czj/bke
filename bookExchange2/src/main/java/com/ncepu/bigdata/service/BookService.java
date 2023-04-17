@@ -2,10 +2,13 @@ package com.ncepu.bigdata.service;
 
 import com.ncepu.bigdata.entity.Book;
 
+import java.util.List;
+
 
 public interface BookService {
     Book getBookById(int bookId);
-    Book getBookByRG(int start,int end);
+
+    List<Book> getBookByRG(int start, int end);
 
     void addBook(Book book);
 

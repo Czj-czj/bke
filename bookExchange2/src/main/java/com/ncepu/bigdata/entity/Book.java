@@ -1,7 +1,5 @@
 package com.ncepu.bigdata.entity;
 
-import java.time.LocalDate;
-
 public class Book {
     private int bookID;
     private int userID;
@@ -31,10 +29,10 @@ public class Book {
         this.publishDate = null;
         this.description = null;
         this.image = null;
-        this.price=0;
+        this.price = 0;
     }
 
-    public Book(int bookID, int userID, String title, String author, String publisher, String publishDate, String description, String image,double price) {
+    public Book(int bookID, int userID, String title, String author, String publisher, String publishDate, String description, String image, double price) {
         // 含参构造方法
         this.bookID = bookID;
         this.userID = userID;
@@ -44,7 +42,19 @@ public class Book {
         this.publishDate = publishDate;
         this.description = description;
         this.image = image;
-        this.price=price;
+        this.price = price;
+    }
+
+    public Book(int userID, String title, String author, String publisher, String publishDate, String description, String image, double price) {
+        this.bookID = 0;
+        this.userID = userID;
+        this.title = title;
+        this.author = author;
+        this.publisher = publisher;
+        this.publishDate = publishDate;
+        this.description = description;
+        this.image = image;
+        this.price = price;
     }
 
     public int getBookID() {

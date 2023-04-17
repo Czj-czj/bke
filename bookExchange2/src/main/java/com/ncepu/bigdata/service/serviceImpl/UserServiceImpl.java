@@ -1,8 +1,6 @@
 package com.ncepu.bigdata.service.serviceImpl;
 
-import com.ncepu.bigdata.entity.SysUser;
 import com.ncepu.bigdata.entity.User;
-import com.ncepu.bigdata.mapper.TuserMapper;
 import com.ncepu.bigdata.mapper.UserMapper;
 import com.ncepu.bigdata.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +13,15 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
+
     @Override
     public User login(String id, String pwd) {
-        return userMapper.login(id,pwd);
+        return userMapper.login(id, pwd);
+    }
+
+    @Override
+    public User loginByID(String id, String password) {
+        return userMapper.loginByID(id, password);
     }
 
     @Override

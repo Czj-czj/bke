@@ -1,7 +1,9 @@
 package com.ncepu.bigdata.mapper;
+
 import com.ncepu.bigdata.entity.Book;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
 @Mapper
@@ -11,7 +13,7 @@ public interface BookMapper {
     Book getBookByID(@Param("bookID") int bookID);
 
     @Select("SELECT * FROM Book WHERE Book_ID > #{start} and Book_ID < #{end}")
-    Book getBookByRG(@Param("start") int start,@Param("end") int end);
+    List<Book> getBookByRG(@Param("start") int start, @Param("end") int end);
 
     @Select("SELECT * FROM Book")
     List<Book> getAllBooks();

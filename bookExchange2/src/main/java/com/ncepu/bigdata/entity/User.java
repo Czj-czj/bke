@@ -5,6 +5,20 @@ public class User {
     private String password;
     private String email;
 
+
+    private String nikeName;
+
+    public User(String nikeName, String username, String password, String email) {
+        this.nikeName = nikeName;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
+
+    public String getNikeName() {
+        return nikeName;
+    }
+
     public User() {
         this.id = 0;
         this.username = null;
@@ -18,10 +32,15 @@ public class User {
         this.password = password;
         this.email = email;
     }
+
     public User(String username, String password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;
+    }
+
+    public void setNikeName(String nikeName) {
+        this.nikeName = nikeName;
     }
 
     public int getId() {
