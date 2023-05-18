@@ -1,0 +1,17 @@
+<!--pages/me/userDetail.wxml-->
+<text>pages/me/userDetail.wxml</text>
+<view class="user">
+  <image src="../../images/defaultUser.png" mode="aspectFit"></image>
+  <view class="user-info">
+    <text class="user-username">用户名：  {{user.username}}</text>
+    <text>\n</text>
+    <text class="user-nikeName">用户昵称：{{user.nickname}}</text>
+    <text>\n</text>
+    <text class="user-email">用户邮箱：{{user.email}}</text>
+    <text>\n</text>
+    <text class="user-description">{{user.description}}</text>
+  </view>
+</view>
+
+<button style="position: relative; left: 0rpx; top: 134rpx"  bindtap="toIndex" hidden="{{user==null}}">切换用户</button>
+<button style="position: relative; left: 0rpx; top: 134rpx"  bindtap="toIndex" hidden="{{user!=null}}">登录</button>

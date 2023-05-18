@@ -1,0 +1,58 @@
+<!--pages/home/buy/buy.wxml-->
+<text>pages/home/buy/buy.wxml</text>
+<!-- <view class="book">
+  <image src="../../../images/defaultUser.png" mode="aspectFit"></image>
+  <view class="book-info">
+    <text class="book-title">{{"书名："+book.title}}</text>
+    <text>\n</text>
+    <text class="book-author">{{"作者：\t"+book.author}}</text>
+    <text>\n</text>
+    <text class="book-publisher">{{"出版社：\t"+book.publisher}}</text>
+    <text>\n</text>
+    <text class="book-publish-date">{{"出版日期："+ (book.publishDate ? book.publishDate : "2001-08-27(default)")}}</text>
+    <text>\n</text>
+    <text class="book-description">{{"简介："+book.description}}</text>
+  </view>
+</view> -->
+<!-- pages/home/buy/buy.wxml -->
+<view class="book">
+  <image src="{{book.image}}" mode="aspectFit"></image>
+  <view class="book-info">
+    <text class="book-title">{{"书名："+book.title}}</text>
+    <text>\n</text>
+    <text class="book-author">{{"作者：\t"+book.author}}</text>
+    <text>\n</text>
+    <text class="book-publisher">{{"出版社：\t"+book.publisher}}</text>
+    <text>\n</text>
+    <text class="book-publish-date">{{"出版日期："+ (book.publishDate ? book.publishDate : "2001-08-27(default)")}}</text>
+    <text>\n</text>
+    <text class="book-description">{{"简介："+book.description}}</text>
+  </view>
+</view>
+
+<button bindtap="editBook">编辑</button>
+<button bindtap="submitForm" hidden="{{!isEditable}}">提交</button>
+
+<!-- 可编辑字段 -->
+<view wx:if="{{isEditable}}">
+  <view class="input-group">
+    <text>书名：</text>
+    <input value="{{editableBook.title}}" bindinput="onTitleInput" />
+  </view>
+  <view class="input-group">
+    <text>作者：</text>
+    <input value="{{editableBook.author}}" bindinput="onAuthorInput" />
+  </view>
+  <view class="input-group">
+    <text>出版社：</text>
+    <input value="{{editableBook.publisher}}" bindinput="onPublisherInput" />
+  </view>
+  <view class="input-group">
+    <text>出版日期：</text>
+    <input value="{{editableBook.publishDate}}" bindinput="onPublishDateInput" />
+  </view>
+  <view class="input-group">
+    <text>简介：</text>
+    <textarea value="{{editableBook.description}}" bindinput="onDescriptionInput"></textarea>
+  </view>
+</view>

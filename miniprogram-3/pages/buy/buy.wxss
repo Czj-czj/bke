@@ -1,0 +1,85 @@
+/* pages/home/buy/buy.wxss */
+/* 书籍详情页样式 */
+
+/* 整个页面 */
+.book-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 20rpx;
+}
+
+/* 书籍图片 */
+.book-image {
+  width: 200rpx;
+  height: 280rpx;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+/* 书籍标题 */
+.book-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 20rpx;
+}
+
+/* 书籍作者 */
+.book-author {
+  font-size: 24rpx;
+  color: #666666;
+  margin-bottom: 10rpx;
+}
+
+/* 书籍出版社 */
+.book-publisher {
+  font-size: 24rpx;
+  color: #666666;
+  margin-bottom: 10rpx;
+}
+
+/* 书籍出版日期 */
+.book-publish-date {
+  font-size: 24rpx;
+  color: #666666;
+  margin-bottom: 10rpx;
+}
+
+/* 书籍描述 */
+.book-description {
+  font-size: 24rpx;
+  color: #666666;
+  margin-bottom: 20rpx;
+}
+
+/* 购买按钮 */
+.book-buy-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300rpx;
+  height: 60rpx;
+  background-color: #0088cc;
+  color: #ffffff;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+  margin-bottom: 40rpx;
+}
+
+/* 返回首页按钮 */
+.book-back-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300rpx;
+  height: 60rpx;
+  background-color: #ffffff;
+  color: #0088cc;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+  border: 1rpx solid #0088cc;
+  margin-bottom: 40rpx;
+}

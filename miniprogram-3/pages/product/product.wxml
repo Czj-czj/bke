@@ -1,0 +1,21 @@
+<!--pages/product/product.wxml-->
+<text>pages/product/product.wxml</text>
+<view>
+<button bindtap="upBook">上传书籍</button>
+<!-- 书籍列表 -->
+<scroll-view scroll-y="{{true}}" bindscrolltolower="onReachBottom">
+<view class="book-list">
+  <block wx:for="{{bookList}}" wx:key="{{item.bookId}}">
+    <view class="book-item"  bindtap="buy" data-book="{{item}}">
+      <image class="book-cover" src="https://th.bing.com/th/id/OIP.8wUyz6XbVpyZbMKVVjbRMgHaE8?pid=PersonalBing&rs=1"></image>
+      <view class="book-info">
+        <view class="book-name">{{item.title}}</view>
+        <view class="book-author">{{item.author}}</view>
+        <view class="book-price">{{item.price}}</view>
+      </view>
+    </view>
+  </block>
+</view>
+</scroll-view>
+
+</view>

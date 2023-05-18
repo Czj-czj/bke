@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/product/product",
+    "pages/message/message",
+    "pages/me/me",
+    "pages/zhuce/zhuce",
+    "pages/index/index",
+    "pages/buy/buy",
+    "pages/me/userDetail",
+    "pages/product/updateBook",
+    "pages/me/books"
+  ],
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#1296db",
+    "backgroundColor": "#000066",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "推荐",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-active.png"
+      },
+      {
+        "pagePath": "pages/product/product",
+        "text": "详情",
+        "iconPath": "images/product.png",
+        "selectedIconPath": "images/product-active.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "images/message.png",
+        "selectedIconPath": "images/message-active.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

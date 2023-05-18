@@ -1,0 +1,14 @@
+<!--pages/me/books.wxml-->
+<text>pages/me/books.wxml</text>
+<scroll-view scroll-y="{{true}}" bindscrolltolower="onReachBottom">
+    <block wx:for="{{bookList}}" wx:key="{{item.bookId}}">
+      <view class="book-item" bindtap="buy" data-book="{{item}}">
+        <image class="book-cover" src="{{item.image}}"></image>
+        <view class="book-info">
+          <view class="book-name">{{item.title}}</view>
+          <view class="book-author">{{item.author}}</view>
+          <view class="book-price">{{item.price}}</view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>

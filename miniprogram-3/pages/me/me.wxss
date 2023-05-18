@@ -1,0 +1,63 @@
+/* pages/me/me.wxss */
+/* pages/me/me.wxss */
+.container {
+  padding: 20rpx;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+}
+
+.info {
+  margin-left: 20rpx;
+}
+
+.username {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.mobile {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.orders {
+  margin-top: 20rpx;
+}
+
+.title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.list {
+  border: 1rpx solid #ccc;
+  border-radius: 5rpx;
+  padding: 20rpx;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+
+.name {
+  font-size: 28rpx;
+}
+
+.price {
+  font-size: 28rpx;
+  color: #f60;
+}

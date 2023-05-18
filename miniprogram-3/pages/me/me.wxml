@@ -1,0 +1,27 @@
+<!--pages/me/me.wxml-->
+<view class="container">
+  <!-- 基本信息 -->
+  <view class="profile" bindtap="showDetail">
+    <image class="avatar" src="../../images/defaultUser.png" />
+    <view class="info">
+      <view class="username">{{userInfo.nickname}}</view>
+      <view class="mobile">{{userInfo.email}}</view>
+    </view>
+  </view>
+  <!-- 订单列表 -->
+  <view class="orders">
+    <view class="title">我的书籍</view>
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button>
+    <view class="list" bindtap="toGetBooks">
+      <block wx:for="{{orders}}" wx:key="id">
+        <view class="item">
+          <view class="name">{{item.name}}</view>
+          <view class="price">{{item.price}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <button style="position: relative; left: 0rpx; top: 134rpx" bindtap="toIndex" >{{logintext}} </button>
+  <button style="position: relative; left: 0rpx; top: 134rpx" bindtap="toGetUser" >测试</button>
+  <button style="position: relative; left: 0rpx; top: 134rpx" bindtap="refresh" hidden="true">刷新</button>
+</view>

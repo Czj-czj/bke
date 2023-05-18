@@ -1,0 +1,44 @@
+/* pages/home/home.wxss */
+/* 轮播图 */
+swiper {
+  height: 400rpx;
+}
+
+/* 书籍列表 */
+.book-item {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.book-cover {
+  width: 200rpx;
+  height: 260rpx;
+  margin-right: 20rpx;
+}
+
+.book-info {
+  display: flex;
+  position: relative;
+  left:30rpx;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-name {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.book-author {
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 10rpx;
+}
+
+.book-price {
+  font-size: 28rpx;
+  color: #e60012;
+}

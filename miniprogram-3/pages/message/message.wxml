@@ -1,0 +1,19 @@
+<!--pages/message/message.wxml-->
+<text>pages/message/message.wxml</text>
+<!-- <scroll-view scroll-y="{{true}}" bindscrolltolower="onReachBottom">
+  <block wx:for="{{bookList}}" wx:key="{{item.bookId}}">
+    <view class="book-item"  bindtap="buy" data-book="{{item}}">
+      <image class="book-cover" src="https://th.bing.com/th/id/OIP.8wUyz6XbVpyZbMKVVjbRMgHaE8?pid=PersonalBing&rs=1"></image>
+      <view class="book-info">
+        <view class="book-name">{{item.title}}</view>
+        <view class="book-author">{{item.author}}</view>
+        <view class="book-price">{{item.price}}</view>
+      </view>
+    </view>
+  </block>
+</scroll-view> -->
+<text style="font-size: 40rpx;">
+这里是消息中心\n您可以在此查看您与其他同学的对话\n在此与其他同学沟通图书交换的地点等\n
+</text>
+<text style="color: #e62727; font-size: 50rpx;">此模块未完善，敬请期待！！</text>
+<map></map>

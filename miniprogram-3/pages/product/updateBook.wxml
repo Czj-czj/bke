@@ -1,0 +1,50 @@
+<!--pages/product/updateBook.wxml-->
+<text>pages/product/updateBook.wxml</text>
+<!--pages/zhuce/zhuce.wxml-->
+<view class="container">
+  <form bindsubmit="onSubmit">
+    <view class="input-container">
+      <view class="label">书籍名称</view>
+      <input name="bookname" placeholder="请输入书名" />
+    </view>
+    <view class="input-container">
+      <view class="label">书籍作者</view>
+      <input name="author" type="author" placeholder="请输入作者" />
+    </view>
+    <view class="input-container">
+      <view class="label">出版社</view>
+      <input name="publisher" type="publisher" placeholder="请输入出版社" />
+    </view>
+    <view class="input-container">
+      <view class="label">出版日期</view>
+      <view class="section">
+        <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+          <view class="picker" style="background-color: rgb(210, 231, 224);">
+            当前选择: {{date}}
+          </view>
+        </picker>
+      </view>
+
+    </view>
+    <view class="input-container">
+      <view class="label">书籍简介</view>
+      <textarea name="description" placeholder="请输入简介"></textarea>
+    </view>
+    <view class="input-container">
+      <view class="label">预期售价</view>
+      <textarea name="price" placeholder="请输入"></textarea>
+    </view>
+    <view class="box_text" wx:if="{{!imgSrc}}">上传的图片将展示在这里</view>
+  <view  wx:if="{{imgSrc}}" class="code_box">
+    <image class="code_img" src="{{imgSrc}}"></image>
+    <view class="img_info">
+      <view class="img_info_title">文件路径</view>
+      <view class="img_info_detail">{{imgSrc}}</view>
+    </view>
+  </view>
+  <view class="button" bindtap="uploadImg" wx:if="{{!haveGetImgSrc}}">上传照片</view>
+  <view class="button_clear" bindtap="clearImgSrc" wx:if="{{haveGetImgSrc}}">清空</view>
+  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
+    <button formType="submit">添加书籍</button>
+  </form>
+</view>

@@ -1,0 +1,5 @@
+/* pages/me/userDetail.wxss */
+.user{
+  position: relative;
+  top: 10 rpx;
+}
