@@ -19,13 +19,19 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<Book> getBookByRG(int start, int end) {
-        return bookMapper.getBookByRG(start, end);
+    public List<Book> getBookByRG(int start, int count) {
+        return bookMapper.getBookByRG(start, count);
     }
 
     @Override
     public void addBook(Book book) {
         bookMapper.addBook(book);
+    }
+
+    @Override
+    public void add_Book(Integer userID, String title, String author, String publisher, String publishDate,
+                         String description, String image, Double price) {
+        bookMapper.add_Book(userID, title, author, publisher, publishDate, description, image, price);
     }
 
     @Override

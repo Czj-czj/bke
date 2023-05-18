@@ -1,36 +1,35 @@
 package com.ncepu.bigdata.entity;
 public class User {
-    private int id;
+    private int user_ID;
     private String username;
     private String password;
     private String email;
+    private String nickname;
 
 
-    private String nikeName;
-
-    public User(String nikeName, String username, String password, String email) {
-        this.nikeName = nikeName;
+    public User(String nickname, String username, String password, String email) {
+        this.nickname = nickname;
         this.username = username;
         this.password = password;
         this.email = email;
     }
 
-    public String getNikeName() {
-        return nikeName;
-    }
-
     public User() {
-        this.id = 0;
+        this.user_ID = 0;
         this.username = null;
         this.password = null;
         this.email = null;
     }
 
-    public User(int id, String username, String password, String email) {
-        this.id = id;
+    public User(int user_ID, String username, String password, String email) {
+        this.user_ID = user_ID;
         this.username = username;
         this.password = password;
         this.email = email;
+    }
+
+    public String getNickname() {
+        return nickname;
     }
 
     public User(String username, String password, String email) {
@@ -39,16 +38,16 @@ public class User {
         this.email = email;
     }
 
-    public void setNikeName(String nikeName) {
-        this.nikeName = nikeName;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
-    public int getId() {
-        return id;
+    public int getUser_ID() {
+        return user_ID;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUser_ID(int user_ID) {
+        this.user_ID = user_ID;
     }
 
     public String getUsername() {

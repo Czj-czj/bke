@@ -1,8 +1,8 @@
 package com.ncepu.bigdata.entity;
 
 public class Book {
-    private int bookID;
-    private int userID;
+    private int book_ID;
+    private int user_ID;
     private String title;
     private String author;
     private String publisher;
@@ -21,8 +21,8 @@ public class Book {
     private double price;
 
     public Book() {
-        this.bookID = 0;
-        this.userID = 0;
+        this.book_ID = 0;
+        this.user_ID = 0;
         this.title = null;
         this.author = null;
         this.publisher = null;
@@ -32,10 +32,10 @@ public class Book {
         this.price = 0;
     }
 
-    public Book(int bookID, int userID, String title, String author, String publisher, String publishDate, String description, String image, double price) {
+    public Book(int book_ID, int user_ID, String title, String author, String publisher, String publishDate, String description, String image, double price) {
         // 含参构造方法
-        this.bookID = bookID;
-        this.userID = userID;
+        this.book_ID = book_ID;
+        this.user_ID = user_ID;
         this.title = title;
         this.author = author;
         this.publisher = publisher;
@@ -45,9 +45,9 @@ public class Book {
         this.price = price;
     }
 
-    public Book(int userID, String title, String author, String publisher, String publishDate, String description, String image, double price) {
-        this.bookID = 0;
-        this.userID = userID;
+    public Book(int user_ID, String title, String author, String publisher, String publishDate, String description, String image, double price) {
+        this.book_ID = 0;
+        this.user_ID = user_ID;
         this.title = title;
         this.author = author;
         this.publisher = publisher;
@@ -57,20 +57,20 @@ public class Book {
         this.price = price;
     }
 
-    public int getBookID() {
-        return bookID;
+    public int getBook_ID() {
+        return book_ID;
     }
 
-    public void setBookID(int bookID) {
-        this.bookID = bookID;
+    public void setBook_ID(int book_ID) {
+        this.book_ID = book_ID;
     }
 
-    public int getUserID() {
-        return userID;
+    public int getUser_ID() {
+        return user_ID;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public void setUser_ID(int user_ID) {
+        this.user_ID = user_ID;
     }
 
     public String getTitle() {
